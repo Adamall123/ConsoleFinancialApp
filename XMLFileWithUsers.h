@@ -3,10 +3,11 @@
 
 #include "XMLTextFile.h"
 #include "User.h"
+#include "Markup.h"
 class XMLFileWithUsers : public XMLTextFile{
 
     public:
-    XMLFileWithUsers();
+    //XMLFileWithUsers();
     void addUserToXMLFile();
     void addAllUsersToXMLFile();
     vector <User> loadUsersFromXMLFile();
