@@ -13,7 +13,6 @@ class PersonalBudget{
 
         //adresatMenedzer = NULL;
     };
-   // PersonalBudget();
    // ~PersonalBudget();
     void registerUser();
     void login();

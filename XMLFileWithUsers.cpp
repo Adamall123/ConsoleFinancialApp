@@ -11,7 +11,6 @@ void XMLFileWithUsers::addUserToXMLFile(User user) {
         xml.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
         xml.AddElem( "Users" );
     }
-
     xml.FindElem();
     xml.IntoElem();
     xml.AddElem( "User" );
@@ -21,8 +20,6 @@ void XMLFileWithUsers::addUserToXMLFile(User user) {
     xml.AddElem( "Surname", user.getSurname() );
     xml.AddElem( "Login", user.getLogin() );
     xml.AddElem( "Password", user.getPassword() );
-
-
     xml.Save( "users.xml" );
 
 }
@@ -54,3 +51,25 @@ vector <User> XMLFileWithUsers::loadUsersFromXMLFile() {
     }
     return users;
 }
+
+void XMLFileWithUsers::addAllUsersToXMLFile(vector <User> &users) {
+    CMarkup xml;
+    //bool fileExists = xml.Load("users.xml");
+        xml.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
+        xml.AddElem( "Users");
+        xml.IntoElem();
+        for (int i = 0; i < users.size(); i++) {
+            xml.AddElem("User");
+            xml.IntoElem();
+            xml.AddElem( "UserID",  users[i].getID() );
+            xml.AddElem( "Name", users[i].getName() );
+            xml.AddElem( "Surname", users[i].getSurname() );
+            xml.AddElem( "Login", users[i].getLogin() );
+            xml.AddElem( "Password", users[i].getPassword() );
+            xml.OutOfElem();
+        }
+        xml.Save( "users.xml" );
+    //else cout << "The file could not be opened" << endl; // pobierzNazwePliku()
+
+}
+

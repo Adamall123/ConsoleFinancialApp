@@ -14,7 +14,6 @@ class UserManager{
     vector <User> users;
     XMLFileWithUsers xmlFileWithUsers;
     User giveDataForNewUser();
-    int downloadNewUsersID();
     bool doesLoginExist(string login);
     //update those methods on UML
     int getIdFromNewUser();

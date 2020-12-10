@@ -11,7 +11,7 @@ class XMLFileWithUsers : public XMLTextFile{
     //XMLFileWithUsers();
     XMLFileWithUsers(string nameOfFile): XMLTextFile(nameOfFile) {};
     void addUserToXMLFile(User user);
-    void addAllUsersToXMLFile();
+    void addAllUsersToXMLFile(vector <User> &users);
     vector <User> loadUsersFromXMLFile();
 
 };

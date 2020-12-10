@@ -11,7 +11,7 @@ void UserManager::registerUser(){
     system("pause");
 }
 
-////////////////////////////////////////////////////////////////////////Logowanie Uzytkownika ////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////Logging in User ////////////////////////////////////////////////////////////////////////
 int UserManager::login() {
     User user;
     string login = "", password = "";
@@ -43,6 +43,27 @@ int UserManager::login() {
         itr++;
     }
 }
+////////////////////////////////////////////////////////////////////////Logging out  ////////////////////////////////////////////////////////////////////////
+void UserManager::logout() {
+    idLoggedInUser = 0;
+}
+
+////////////////////////////////////////////////////////////////////////Changing password of user ////////////////////////////////////////////////////////////////////////
+void UserManager::changeOfPasswordForLoggedInUser() {
+    string newPassword = "";
+    cout << "Give new password: ";
+    newPassword = AuxiliaryMethods::loadLine();
+
+    for (int i = 0 ; i < users.size(); i++) {
+        if (users[i].getID() == idLoggedInUser) {
+            users[i].setPassword(newPassword);
+            cout << "Password has been changed." << endl << endl;
+            system("pause");
+        }
+    }
+    xmlFileWithUsers.addAllUsersToXMLFile(users);
+}
+
 
 bool UserManager::isUserLoggedIn() {
     if (idLoggedInUser > 0)

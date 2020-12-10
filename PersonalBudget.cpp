@@ -15,6 +15,18 @@ bool PersonalBudget::isUserLoggedIn(){
     else
         return 0;
 }
+
+void PersonalBudget::logout() {
+    userManager.logout();
+    //delete adresatMenedzer;
+   // adresatMenedzer = NULL;
+}
+
+void PersonalBudget::changeOfPasswordForLoggedInUser() {
+    userManager.changeOfPasswordForLoggedInUser();
+}
+
+
 char PersonalBudget::selectOptionFromMainMenu() {
     char choice;
 
