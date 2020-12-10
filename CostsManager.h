@@ -20,7 +20,7 @@ protected:
     int getNumberOfDaysOfSelectedMonth(int month, int year);
     string checkCorecctnessOfGivenDate(string dateIncome);
     void replaceCommaWithPeriod();
-
+    string replaceCommasWithDots(string text);
 public:
     CostsManager(int idFromLoggedInUser) : ID_LOGGED_IN_USER(idFromLoggedInUser) {
     //adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);

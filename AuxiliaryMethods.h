@@ -14,7 +14,8 @@ class AuxiliaryMethods{
     static string loadLine();
     static int convertFromStringToInt(string number);
     static string convertFromIntToString(int number);
-
+    static string convertFromFloatToString(float number);
+    static float convertFromStringToFloat(string number);
 };
 
 #endif // AUXILIARYMETHODS_H

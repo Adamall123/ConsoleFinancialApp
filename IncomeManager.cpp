@@ -23,27 +23,9 @@ void IncomeManager::addIncome() {
 
     //change givenDate to Integer
     Income income  = giveDataForNewIncome(date);
-
     incomes.push_back(income);
-    /*
-    for (int i = 0; i < incomes.size(); i++){
-        cout << incomes[i].getUserId() << endl;
-        cout << incomes[i].getDate() << endl;
-        cout << incomes[i].getItem() << endl;
-        cout << incomes[i].getAmount() << endl;
-    }
-    system("PAUSE");
-    */
-
     xmlFileWithIncomes.addIncomeToXMLFile(income);
 
-}
-
-string IncomeManager::replaceCommasWithDots(string text){
-    for (int i = 0; i < text.size() ; i++){
-        if(text[i] == ',') text[i] = '.';
-    }
-    return text;
 }
 
 Income IncomeManager::giveDataForNewIncome(int givenDate){
@@ -62,19 +44,7 @@ Income IncomeManager::giveDataForNewIncome(int givenDate){
     cout << "Type amount of income: ";
     cin >> strAmount; //checking if bigger than 0 and making maximum two number after period
     strAmount = replaceCommasWithDots(strAmount);
-    //////////////////////////////////////////////////////////////////////
-    //change string to list of characters - write a method
-    string s(strAmount);
-    char value[s.length()];
-    for (int i = 0; i <sizeof(value); i++){
-        value[i] = s[i];
-    }
-    amount = atof(value);
-    //////////////////////////////////////////////////////////////////////
-
-    income.setAmount(amount);
-
-
+    income.setAmount(AuxiliaryMethods::convertFromStringToFloat(strAmount));
     return income;
 }
 

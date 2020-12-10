@@ -16,6 +16,23 @@ string AuxiliaryMethods::convertFromIntToString(int number) {
     return str;
 }
 
+string AuxiliaryMethods::convertFromFloatToString(float number){
+    ostringstream ss;
+    ss << number;
+    string s(ss.str());
+    return s;
+}
+float AuxiliaryMethods::convertFromStringToFloat(string number){
+    float amount;
+    string s(number);
+    char value[s.length()];
+    for (int i = 0; i <sizeof(value); i++){
+        value[i] = s[i];
+    }
+    amount = atof(value);
+    return amount;
+}
+
 char AuxiliaryMethods::loadSign() {
     string enter = "";
     char sign  = {0};

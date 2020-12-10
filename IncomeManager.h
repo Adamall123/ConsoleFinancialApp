@@ -15,7 +15,7 @@ class IncomeManager : private CostsManager{
     //Czy tutaj zastosować polimorgizm?
     string giveDateToNewIncome();
     Income giveDataForNewIncome(int givenDate);
-    string replaceCommasWithDots(string text);
+
     //string giveItemIncome();
     //string giveAmountOfIncome();
 public:

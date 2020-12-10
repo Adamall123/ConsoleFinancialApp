@@ -3,22 +3,22 @@
 <Income>
 <IncomeID>1</IncomeID>
 <UserID>1</UserID>
-<Date>20201210</Date>
-<Item>salary from company</Item>
-<Amount>2543</Amount>
+<Date>20201211</Date>
+<Item>test5</Item>
+<Amount>300</Amount>
 </Income>
 <Income>
 <IncomeID>2</IncomeID>
 <UserID>1</UserID>
-<Date>20191211</Date>
-<Item>Stock Market</Item>
-<Amount>999</Amount>
+<Date>20201211</Date>
+<Item>test6</Item>
+<Amount>300.32</Amount>
 </Income>
 <Income>
 <IncomeID>3</IncomeID>
 <UserID>1</UserID>
-<Date>20201210</Date>
-<Item>Winter Camp</Item>
-<Amount>3000</Amount>
+<Date>20201211</Date>
+<Item>test8</Item>
+<Amount>300.32</Amount>
 </Income>
 </Incomes>

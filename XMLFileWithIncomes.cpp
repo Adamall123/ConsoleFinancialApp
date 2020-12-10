@@ -2,7 +2,8 @@
 
 void XMLFileWithIncomes::addIncomeToXMLFile(Income income){
      CMarkup xml;
-    //check if file is empty?
+
+
     bool fileExists = xml.Load("incomes.xml");
 
     if(!fileExists) {
@@ -14,10 +15,10 @@ void XMLFileWithIncomes::addIncomeToXMLFile(Income income){
     xml.AddElem( "Income" );
     xml.IntoElem();
     xml.AddElem( "IncomeID", income.getIncomeID() );
-    xml.AddElem( "UserID",   income.getUserId() );
+    xml.AddElem( "UserID",   income.getUserId() ); //from string to double
     xml.AddElem( "Date", income.getDate() ); //here it must be changed again with pattern from int to string with '-'
     xml.AddElem( "Item", income.getItem() );
-    xml.AddElem( "Amount", income.getAmount() );
+    xml.AddElem( "Amount", AuxiliaryMethods::convertFromFloatToString(income.getAmount()) );
     xml.Save( "incomes.xml" );
 }
 
