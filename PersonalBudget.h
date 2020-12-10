@@ -6,10 +6,16 @@
 #include "AuxiliaryMethods.h"
 #include "UserManager.h"
 #include "User.h"
+#include "Costs.h"
+#include "CostsManager.h"
+#include "IncomeManager.h"
 class PersonalBudget{
    UserManager userManager;
+   const string NAME_OF_FILE_WITH_INCOMES;
+   CostsManager *costsManager;
+   IncomeManager *incomeManager;
     public:
-        PersonalBudget(string nameOfFileWithUsers): userManager(nameOfFileWithUsers) {
+        PersonalBudget(string nameOfFileWithUsers, string nameOfFileWithIncomes): userManager(nameOfFileWithUsers), NAME_OF_FILE_WITH_INCOMES(nameOfFileWithIncomes) {
 
         //adresatMenedzer = NULL;
     };

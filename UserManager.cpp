@@ -96,7 +96,9 @@ User UserManager::giveDataForNewUser() {
     user.setPassword(AuxiliaryMethods::loadLine()) ;
     return user;
 }
-
+int UserManager::downloadLoggedInUsersID(){
+    return idLoggedInUser;
+}
 
 int UserManager::getIdFromNewUser() {
     if (users.empty() == true)

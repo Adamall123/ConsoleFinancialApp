@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     cout << "Personal Budget - start!" << endl;
-    PersonalBudget personalBudget("users.xml"); //here in constructor we will give three names of xml files
+    PersonalBudget personalBudget("users.xml", "incomes.xml"); //here in constructor we will give three names of xml files
 
     char choice;
 
@@ -33,7 +33,7 @@ int main()
 
             switch (choice) {
             case '1':
-               // ksiazkaAdresowa.dodajAdresata();
+                    personalBudget.addIncome();
                 break;
             case '2':
               //  ksiazkaAdresowa.wyszukajAdresatowPoImieniu();

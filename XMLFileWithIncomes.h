@@ -7,7 +7,8 @@
 class XMLFileWithIncomes : public XMLTextFile{
 
 public:
-    addExpenceToXMLFile();
+    XMLFileWithIncomes(string nameOfFile): XMLTextFile(nameOfFile) {};
+    void addIncomeToXMLFile(Income income);
     vector <Income> loadIncomesFromXMLFile();
 
 };

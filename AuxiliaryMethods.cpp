@@ -8,6 +8,14 @@ int AuxiliaryMethods::convertFromStringToInt(string number) {
     return numberInt;
 }
 
+
+string AuxiliaryMethods::convertFromIntToString(int number) {
+    ostringstream ss;
+    ss << number;
+    string str = ss.str();
+    return str;
+}
+
 char AuxiliaryMethods::loadSign() {
     string enter = "";
     char sign  = {0};

@@ -3,8 +3,8 @@
 
 #include "XMLTextFile.h"
 #include "User.h"
-#include "Markup.h"
-#include "AuxiliaryMethods.h"
+
+
 class XMLFileWithUsers : public XMLTextFile{
 
     public:

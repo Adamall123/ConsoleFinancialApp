@@ -3,6 +3,8 @@
 
 #include <vector>
 #include <iostream>
+#include "Markup.h"
+#include "AuxiliaryMethods.h"
 using namespace std;
 
 class XMLTextFile{

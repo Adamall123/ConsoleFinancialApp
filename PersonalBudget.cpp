@@ -7,6 +7,13 @@ void PersonalBudget::registerUser(){
 
 void PersonalBudget::login(){
     userManager.login();
+     if(userManager.isUserLoggedIn()){
+        //costsManager = new CostsManager(NAME_OF_FILE_WITH_INCOMES, userManager.downloadLoggedInUsersID());
+        incomeManager = new IncomeManager(NAME_OF_FILE_WITH_INCOMES, userManager.downloadLoggedInUsersID());
+     }
+
+    //    adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
+
 
 }
 bool PersonalBudget::isUserLoggedIn(){
@@ -25,6 +32,12 @@ void PersonalBudget::logout() {
 void PersonalBudget::changeOfPasswordForLoggedInUser() {
     userManager.changeOfPasswordForLoggedInUser();
 }
+
+////////////////////////////////// ad income ///////////////////////////////////////////////////
+void PersonalBudget::addIncome(){
+    incomeManager->addIncome();
+}
+
 
 
 char PersonalBudget::selectOptionFromMainMenu() {

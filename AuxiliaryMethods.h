@@ -13,6 +13,7 @@ class AuxiliaryMethods{
     static char loadSign();
     static string loadLine();
     static int convertFromStringToInt(string number);
+    static string convertFromIntToString(int number);
 
 };
 

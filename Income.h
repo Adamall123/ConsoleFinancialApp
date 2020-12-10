@@ -4,9 +4,12 @@
 #include "Costs.h"
 
 
-class Income : private Costs{
+class Income : public Costs{
 
     int incomeId;
+public:
+    void setIncomeID(int newId);
+    int getIncomeID();
 };
 
 #endif // INCOME_H

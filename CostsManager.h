@@ -5,17 +5,26 @@
 #include "Expence.h"
 #include "Income.h"
 #include <vector>
+#include "XMLFileWithIncomes.h"
+#include <ctime>
+#include "AuxiliaryMethods.h"
+
 using namespace std;
 
 class CostsManager{
 
-    const int ID_LOGGED_IN_USER;
-
 protected:
+
+    const int ID_LOGGED_IN_USER;
     string getCurrentDateFromSystem();
-    int getNumberOfDaysOfSelectedMonth();
-    bool checkCorectnessOfGivenDate();
+    int getNumberOfDaysOfSelectedMonth(int month, int year);
+    string checkCorecctnessOfGivenDate(string dateIncome);
     void replaceCommaWithPeriod();
+
+public:
+    CostsManager(int idFromLoggedInUser) : ID_LOGGED_IN_USER(idFromLoggedInUser) {
+    //adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+    };
 };
 
 #endif // COSTSMANAGER_H

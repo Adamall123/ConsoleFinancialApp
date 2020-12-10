@@ -9,10 +9,20 @@ class Costs{
 
     protected:
     int userID;
-    string date;
+    int date;
     string item;
-    int amount;
+    float amount;
 
+    public:
+    void setUserID(int idFromLoggedInUser);
+    void setDate(int date);
+    void setItem(string item);
+    void setAmount(float amount);
+
+    int getUserId();
+    int getDate();
+    string getItem();
+    float getAmount();
 };
 
 #endif // COSTS_H
