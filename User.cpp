@@ -21,6 +21,12 @@ void User::setPassword(string newPassword){
 int User::getID(){
     return userID;
 }
+string User::getName(){
+    return name;
+}
+string User::getSurname(){
+    return surname;
+}
 string User::getLogin(){
     return login;
 }

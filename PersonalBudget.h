@@ -1,18 +1,27 @@
 #ifndef PERSONALBUDGET_H
 #define PERSONALBUDGET_H
 
+#include <stdlib.h>
 
+#include "AuxiliaryMethods.h"
+#include "UserManager.h"
+#include "User.h"
 class PersonalBudget{
+   UserManager userManager;
+    public:
+        PersonalBudget(string nameOfFileWithUsers): userManager(nameOfFileWithUsers) {
 
-    PersonalBudget();
-    ~PersonalBudget();
+        //adresatMenedzer = NULL;
+    };
+   // PersonalBudget();
+   // ~PersonalBudget();
     void registerUser();
     void login();
     void changeOfPasswordForLoggedInUser();
     void logout();
     bool isUserLoggedIn();
-    void selectOptionFromUserMenu();
-    void selectOptionFromMainMenu();
+    char selectOptionFromUserMenu();
+    char selectOptionFromMainMenu();
     void addIncome();
     void addExpence();
     void displaySheetFromTheCurrentMonth();

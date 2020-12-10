@@ -9,7 +9,8 @@ class XMLTextFile{
     const string NAME_OF_FILE;
     bool isFileEmpty();
     string downloadNameFile();
-
+public:
+    XMLTextFile(string nameOfFile) : NAME_OF_FILE(nameOfFile) {}
 };
 
 
