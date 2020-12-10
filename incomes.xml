@@ -8,10 +8,17 @@
 <Amount>2543</Amount>
 </Income>
 <Income>
-<IncomeID>1</IncomeID>
+<IncomeID>2</IncomeID>
 <UserID>1</UserID>
 <Date>20191211</Date>
 <Item>Stock Market</Item>
 <Amount>999</Amount>
+</Income>
+<Income>
+<IncomeID>3</IncomeID>
+<UserID>1</UserID>
+<Date>20201210</Date>
+<Item>Winter Camp</Item>
+<Amount>3000</Amount>
 </Income>
 </Incomes>

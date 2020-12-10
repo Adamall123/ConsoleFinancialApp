@@ -32,7 +32,7 @@ vector <Income> XMLFileWithIncomes::loadIncomesFromXMLFile() {
         xml.IntoElem(); // inside incomes
         while ( xml.FindElem("Income") ) {
             xml.IntoElem();
-            xml.FindElem( "incomeID" );
+            xml.FindElem( "IncomeID" );
             income.setUserID(AuxiliaryMethods::convertFromStringToInt(MCD_2PCSZ(xml.GetData())));
             xml.FindElem( "UserID");
             income.setIncomeID(AuxiliaryMethods::convertFromStringToInt(MCD_2PCSZ(xml.GetData())));
@@ -47,4 +47,23 @@ vector <Income> XMLFileWithIncomes::loadIncomesFromXMLFile() {
         }
     }
     return incomes;
+}
+
+int XMLFileWithIncomes::returnLastIncomeId(){
+    Income income;
+    CMarkup xml;
+    bool fileExists = xml.Load("incomes.xml");
+    if(fileExists){
+         xml.ResetPos(); // top of document
+        xml.FindElem(); // incomes element is root
+        xml.IntoElem(); // inside incomes
+        while ( xml.FindElem("Income") ) {
+            xml.IntoElem();
+            xml.FindElem( "IncomeID" );
+            idFromLastIncome = AuxiliaryMethods::convertFromStringToInt(MCD_2PCSZ(xml.GetData())); //after a while, when on last element than assign
+            xml.OutOfElem();
+        }
+    return idFromLastIncome;
+    }
+    else return 0;
 }

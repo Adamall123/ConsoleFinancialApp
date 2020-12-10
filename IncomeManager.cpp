@@ -54,7 +54,7 @@ Income IncomeManager::giveDataForNewIncome(int givenDate){
     string strAmount;
     float amount;
     Income income;
-    income.setIncomeID(1); //getting last id from xmfileIncomes.getLastIncomeId();
+    income.setIncomeID(xmlFileWithIncomes.returnLastIncomeId() + 1); //getting last id from xmfileIncomes.returnLastIncomeId() + 1;
     income.setUserID(ID_LOGGED_IN_USER);
     income.setDate(givenDate);
     cout << "Type a form of income: " ;

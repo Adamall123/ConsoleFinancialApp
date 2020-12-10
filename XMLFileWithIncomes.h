@@ -6,10 +6,14 @@
 
 class XMLFileWithIncomes : public XMLTextFile{
 
+    int idFromLastIncome;
 public:
-    XMLFileWithIncomes(string nameOfFile): XMLTextFile(nameOfFile) {};
+    XMLFileWithIncomes(string nameOfFile): XMLTextFile(nameOfFile) {
+        idFromLastIncome = 0;
+    };
     void addIncomeToXMLFile(Income income);
     vector <Income> loadIncomesFromXMLFile();
+    int returnLastIncomeId();
 
 };
 
