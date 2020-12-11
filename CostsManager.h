@@ -14,17 +14,15 @@ using namespace std;
 class CostsManager{
 
 protected:
-
     const int ID_LOGGED_IN_USER;
     string getCurrentDateFromSystem();
     int getNumberOfDaysOfSelectedMonth(int month, int year);
     string checkCorecctnessOfGivenDate(string dateIncome);
-    void replaceCommaWithPeriod();
     string replaceCommasWithDots(string text);
+    string dispofeOfDashesInData(string date);
+
 public:
-    CostsManager(int idFromLoggedInUser) : ID_LOGGED_IN_USER(idFromLoggedInUser) {
-    //adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
-    };
+    CostsManager(int idFromLoggedInUser) : ID_LOGGED_IN_USER(idFromLoggedInUser) {};
 };
 
 #endif // COSTSMANAGER_H

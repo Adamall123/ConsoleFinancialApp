@@ -72,3 +72,11 @@ string CostsManager::replaceCommasWithDots(string text){
     }
     return text;
 }
+
+string CostsManager::dispofeOfDashesInData(string date){
+    string dateToConvert="";
+    for (int i = 0; i < date.size(); i++){
+        if(date[i] != '-') dateToConvert+=date[i];
+    }
+    return dateToConvert;
+}

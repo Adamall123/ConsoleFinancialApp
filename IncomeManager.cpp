@@ -3,25 +3,16 @@
 
 void IncomeManager::addIncome() {
 
-    //dotyczy dnia dzisiejszego czy inną z datą chcesz dodać
-    //jeśli wybierze dzisiejszy to pobierz z systemu dzisiejsza date
-    //jeśli nie to wpiś date w formacie rrrr-mm-dd
     system("cls");
     cout << "Adding Income" << endl;
     cout << "--------------------------------" << endl;
     string givenDate = giveDateToNewIncome();
 
-    //////////////////////////////////////////////////////////////
-    //disposfe of '-' from string in date
-    string dateToConvert="";
-    for (int i = 0; i < givenDate.size(); i++){
-        if(givenDate[i] != '-') dateToConvert+=givenDate[i];
-    }
-    //////////////////////////////////////////////////////////////
+    string dateWithoutDashes = dispofeOfDashesInData(givenDate);
 
-    int date = AuxiliaryMethods::convertFromStringToInt(dateToConvert);
+    int date = AuxiliaryMethods::convertFromStringToInt(dateWithoutDashes);
 
-    //change givenDate to Integer
+
     Income income  = giveDataForNewIncome(date);
     incomes.push_back(income);
     xmlFileWithIncomes.addIncomeToXMLFile(income);
@@ -29,12 +20,7 @@ void IncomeManager::addIncome() {
 }
 
 Income IncomeManager::giveDataForNewIncome(int givenDate){
-    //return lastID of Income - method to do...
-    //czegho dotyczy przychod
-    //wysokosc przychody
-    //kwoty ułamkowe zapisuj z kropką jeśli ktoś wpisze ułamek z przecinkiem to zamień przecinek na kropke
     string strAmount;
-    float amount;
     Income income;
     income.setIncomeID(xmlFileWithIncomes.returnLastIncomeId() + 1); //getting last id from xmfileIncomes.returnLastIncomeId() + 1;
     income.setUserID(ID_LOGGED_IN_USER);

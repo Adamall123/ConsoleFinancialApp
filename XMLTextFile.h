@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <iostream>
+#include <string>
 #include "Markup.h"
 #include "AuxiliaryMethods.h"
 using namespace std;
@@ -11,8 +12,11 @@ class XMLTextFile{
     const string NAME_OF_FILE;
     bool isFileEmpty();
     string downloadNameFile();
+
 public:
     XMLTextFile(string nameOfFile) : NAME_OF_FILE(nameOfFile) {}
+    string disposeOfDashesInDate(string strDate);
+    string addDashesInDate(string date);
 };
 
 
