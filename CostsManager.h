@@ -6,6 +6,7 @@
 #include "Income.h"
 #include <vector>
 #include "XMLFileWithIncomes.h"
+#include "XMLFileWithExpences.h"
 #include <ctime>
 #include "AuxiliaryMethods.h"
 

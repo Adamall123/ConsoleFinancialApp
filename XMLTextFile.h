@@ -9,7 +9,7 @@
 using namespace std;
 
 class XMLTextFile{
-    const string NAME_OF_FILE;
+    const string NAME_OF_FILE; //which file?
     bool isFileEmpty();
     string downloadNameFile();
 

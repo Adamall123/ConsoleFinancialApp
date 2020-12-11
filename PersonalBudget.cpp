@@ -10,6 +10,7 @@ void PersonalBudget::login(){
      if(userManager.isUserLoggedIn()){
         //costsManager = new CostsManager(NAME_OF_FILE_WITH_INCOMES, userManager.downloadLoggedInUsersID());
         incomeManager = new IncomeManager(NAME_OF_FILE_WITH_INCOMES, userManager.downloadLoggedInUsersID());
+        expenceManager = new ExpenceManager(NAME_OF_FILE_WITH_EXPENCES, userManager.downloadLoggedInUsersID());
      }
 
     //    adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
@@ -37,7 +38,10 @@ void PersonalBudget::changeOfPasswordForLoggedInUser() {
 void PersonalBudget::addIncome(){
     incomeManager->addIncome();
 }
-
+////////////////////////////////// ad expence //////////////////////////////////////////////////
+void PersonalBudget::addExpence(){
+    expenceManager->addExpence();
+}
 
 
 char PersonalBudget::selectOptionFromMainMenu() {

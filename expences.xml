@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Expences>
+<Expence>
+<ExpenceID>1</ExpenceID>
+<UserID>1</UserID>
+<Date>2020-12-11</Date>
+<Item>shopping</Item>
+<Amount>200</Amount>
+</Expence>
+<Expence>
+<ExpenceID>2</ExpenceID>
+<UserID>1</UserID>
+<Date>2020-12-11</Date>
+<Item>cinema</Item>
+<Amount>10</Amount>
+</Expence>
+<Expence>
+<ExpenceID>3</ExpenceID>
+<UserID>1</UserID>
+<Date>2020-12-11</Date>
+<Item>guitar</Item>
+<Amount>200</Amount>
+</Expence>
+</Expences>

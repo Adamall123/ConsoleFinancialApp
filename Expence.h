@@ -3,9 +3,12 @@
 
 #include "Costs.h"
 
-class Expence : private Costs{
+class Expence : public Costs{
 
-    int incomeId;
+    int expenceId;
+public:
+    void setExpenceID(int newId);
+    int getExpenceID();
 };
 
 #endif // EXPENCE_H
