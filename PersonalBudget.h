@@ -10,17 +10,20 @@
 #include "CostsManager.h"
 #include "IncomeManager.h"
 #include "ExpenceManager.h"
+#include "DisplayCosts.h"
 class PersonalBudget{
    UserManager userManager;
    const string NAME_OF_FILE_WITH_INCOMES;
    const string NAME_OF_FILE_WITH_EXPENCES;
-   CostsManager *costsManager;
+   //CostsManager *costsManager;
    IncomeManager *incomeManager;
    ExpenceManager *expenceManager;
+   DisplayCosts *displayCosts;
     public:
         PersonalBudget(string nameOfFileWithUsers, string nameOfFileWithIncomes, string nameOfFileWithExpences): userManager(nameOfFileWithUsers), NAME_OF_FILE_WITH_INCOMES(nameOfFileWithIncomes),NAME_OF_FILE_WITH_EXPENCES(nameOfFileWithExpences) {
-
-        //adresatMenedzer = NULL;
+        incomeManager = NULL;
+        expenceManager = NULL;
+        displayCosts = NULL;
     };
    // ~PersonalBudget();
     void registerUser();

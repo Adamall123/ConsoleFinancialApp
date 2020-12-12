@@ -66,6 +66,7 @@ string CostsManager::checkCorecctnessOfGivenDate(string dateIncome) {
     }
 }
 
+
 string CostsManager::replaceCommasWithDots(string text){
     for (int i = 0; i < text.size() ; i++){
         if(text[i] == ',') text[i] = '.';
@@ -80,3 +81,5 @@ string CostsManager::dispofeOfDashesInData(string date){
     }
     return dateToConvert;
 }
+
+

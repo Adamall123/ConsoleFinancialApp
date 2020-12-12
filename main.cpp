@@ -39,7 +39,7 @@ int main()
                     personalBudget.addExpence();
                 break;
             case '3':
-              //  ksiazkaAdresowa.wyszukajAdresatowPoNazwisku();
+                    personalBudget.displaySheetFromTheCurrentMonth();
                 break;
             case '4':
                // ksiazkaAdresowa.wyswietlWszystkichAdresatow();

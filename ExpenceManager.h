@@ -9,7 +9,6 @@ class ExpenceManager : private CostsManager {
 
     vector <Expence> expences;
     XMLFileWithExpences xmlFileWithExpences;
-    //Czy tutaj zastosować polimorgizm?
     Expence giveDataForNewExpence(int givenDate);
     string giveDateToNewExpence();
 
@@ -18,7 +17,7 @@ public:
         expences = xmlFileWithExpences.loadExpencesFromXMLFile();
     };
     void addExpence();
-
+    vector <Expence> getExpences();
 
 };
 

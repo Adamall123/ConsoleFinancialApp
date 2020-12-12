@@ -23,6 +23,7 @@ public:
         incomes = xmlFileWithIncomes.loadIncomesFromXMLFile();
     };
     void addIncome();
+    vector <Income> getIncomes();
 
 };
 

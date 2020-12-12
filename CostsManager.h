@@ -14,6 +14,7 @@ using namespace std;
 
 class CostsManager{
 
+
 protected:
     const int ID_LOGGED_IN_USER;
     string getCurrentDateFromSystem();
@@ -23,7 +24,9 @@ protected:
     string dispofeOfDashesInData(string date);
 
 public:
-    CostsManager(int idFromLoggedInUser) : ID_LOGGED_IN_USER(idFromLoggedInUser) {};
+    CostsManager(int idFromLoggedInUser) : ID_LOGGED_IN_USER(idFromLoggedInUser) {
+    };
+
 };
 
 #endif // COSTSMANAGER_H

@@ -73,5 +73,8 @@ string ExpenceManager::giveDateToNewExpence() {
         return date;
     }
     return currentTime;
+}
 
+vector <Expence> ExpenceManager::getExpences(){
+    return expences;
 }

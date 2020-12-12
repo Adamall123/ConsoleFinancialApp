@@ -14,4 +14,11 @@
 <Item>test23</Item>
 <Amount>399.32</Amount>
 </Income>
+<Income>
+<IncomeID>7</IncomeID>
+<UserID>1</UserID>
+<Date>2004-12-12</Date>
+<Item>Forgotten Income</Item>
+<Amount>30000.3</Amount>
+</Income>
 </Incomes>

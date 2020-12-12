@@ -73,5 +73,8 @@ string IncomeManager::giveDateToNewIncome() {
         return date;
     }
     return currentTime;
+}
 
+vector <Income> IncomeManager::getIncomes(){
+    return incomes;
 }

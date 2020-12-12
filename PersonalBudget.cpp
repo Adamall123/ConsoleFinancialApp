@@ -11,11 +11,8 @@ void PersonalBudget::login(){
         //costsManager = new CostsManager(NAME_OF_FILE_WITH_INCOMES, userManager.downloadLoggedInUsersID());
         incomeManager = new IncomeManager(NAME_OF_FILE_WITH_INCOMES, userManager.downloadLoggedInUsersID());
         expenceManager = new ExpenceManager(NAME_OF_FILE_WITH_EXPENCES, userManager.downloadLoggedInUsersID());
+        displayCosts = new DisplayCosts(incomeManager->getIncomes(), expenceManager->getExpences());
      }
-
-    //    adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
-
-
 }
 bool PersonalBudget::isUserLoggedIn(){
     if (userManager.isUserLoggedIn())
@@ -37,10 +34,15 @@ void PersonalBudget::changeOfPasswordForLoggedInUser() {
 ////////////////////////////////// ad income ///////////////////////////////////////////////////
 void PersonalBudget::addIncome(){
     incomeManager->addIncome();
+    displayCosts->updateIncomes(incomeManager->getIncomes());
 }
 ////////////////////////////////// ad expence //////////////////////////////////////////////////
 void PersonalBudget::addExpence(){
     expenceManager->addExpence();
+    displayCosts->updateExpences(expenceManager->getExpences());
+}
+void PersonalBudget::displaySheetFromTheCurrentMonth(){
+    displayCosts->displayBalanceSheetFromTheCurrentMonth();
 }
 
 
