@@ -15,7 +15,6 @@ class PersonalBudget{
    UserManager userManager;
    const string NAME_OF_FILE_WITH_INCOMES;
    const string NAME_OF_FILE_WITH_EXPENCES;
-   //CostsManager *costsManager;
    IncomeManager *incomeManager;
    ExpenceManager *expenceManager;
    DisplayCosts *displayCosts;

@@ -32,7 +32,6 @@ public:
     void displayBalanceSheetFromTheCurrentMonth();
     void displayBalanceSheetFromTheLastMonth();
     void displayBalanceSheetFromSelectedScopeTime();
-    void giveDateScopes();
     void updateIncomes(vector <Income> newIncomes);
     void updateExpences(vector <Expence> expences);
 };
