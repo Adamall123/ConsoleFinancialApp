@@ -47,7 +47,9 @@ void PersonalBudget::displaySheetFromTheCurrentMonth(){
 void PersonalBudget::displaySheetFromTheLastMonth(){
     displayCosts->displayBalanceSheetFromTheLastMonth();
 }
-
+void PersonalBudget::displaySheetFromSelectedScopeTime(){
+    displayCosts->displayBalanceSheetFromSelectedScopeTime();
+}
 
 char PersonalBudget::selectOptionFromMainMenu() {
     char choice;

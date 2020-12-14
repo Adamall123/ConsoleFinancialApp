@@ -45,7 +45,7 @@ int main()
                     personalBudget.displaySheetFromTheLastMonth();
                 break;
             case '5':
-              //  ksiazkaAdresowa.usunAdresata();
+                    personalBudget.displaySheetFromSelectedScopeTime();
                 break;
             case '6':
                 personalBudget.changeOfPasswordForLoggedInUser();
