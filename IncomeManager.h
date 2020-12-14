@@ -15,7 +15,7 @@ class IncomeManager : private CostsManager{
     Income giveDataForNewIncome(int givenDate);
 
 public:
-    IncomeManager(string nameOfFile, int iDFromLoggedInUser) : xmlFileWithIncomes(nameOfFile), CostsManager(iDFromLoggedInUser){
+    IncomeManager(string nameOfFile, int iDFromLoggedInUser) : xmlFileWithIncomes(nameOfFile, iDFromLoggedInUser), CostsManager(iDFromLoggedInUser){
         incomes = xmlFileWithIncomes.loadIncomesFromXMLFile();
     };
     void addIncome();

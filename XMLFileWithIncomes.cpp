@@ -36,9 +36,9 @@ vector <Income> XMLFileWithIncomes::loadIncomesFromXMLFile() {
         while ( xml.FindElem("Income") ) {
             xml.IntoElem();
             xml.FindElem( "IncomeID" );
-            income.setUserID(AuxiliaryMethods::convertFromStringToInt(MCD_2PCSZ(xml.GetData())));
-            xml.FindElem( "UserID");
             income.setIncomeID(AuxiliaryMethods::convertFromStringToInt(MCD_2PCSZ(xml.GetData())));
+            xml.FindElem( "UserID");
+            income.setUserID(AuxiliaryMethods::convertFromStringToInt(MCD_2PCSZ(xml.GetData())));
             xml.FindElem( "Date"); //changing from string to int without '-'
             strDate = MCD_2PCSZ(xml.GetData());
             income.setDate(AuxiliaryMethods::convertFromStringToInt(AuxiliaryMethods::disposeOfDashesInDate(strDate)));
@@ -50,7 +50,10 @@ vector <Income> XMLFileWithIncomes::loadIncomesFromXMLFile() {
             xml.OutOfElem();
         }
     }
-    return incomes;
+    //temporary solution - loading to vector data from logged in user
+    vector <Income> incomesFromLoggedInUser;
+    for (int i = 0; i < incomes.size(); i++)    if (incomes[i].getUserId() == ID_LOGGED_IN_USER) incomesFromLoggedInUser.push_back(incomes[i]);
+    return incomesFromLoggedInUser;
 }
 
 int XMLFileWithIncomes::returnLastIncomeId(){

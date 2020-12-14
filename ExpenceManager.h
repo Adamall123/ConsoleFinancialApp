@@ -13,7 +13,7 @@ class ExpenceManager : private CostsManager {
     string giveDateToNewExpence();
 
 public:
-    ExpenceManager(string nameOfFile, int idLoggedInUser) : xmlFileWithExpences(nameOfFile), CostsManager(idLoggedInUser){
+    ExpenceManager(string nameOfFile, int idLoggedInUser) : xmlFileWithExpences(nameOfFile, idLoggedInUser), CostsManager(idLoggedInUser){
         expences = xmlFileWithExpences.loadExpencesFromXMLFile();
     };
     void addExpence();

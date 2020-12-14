@@ -13,9 +13,9 @@ vector <Expence> XMLFileWithExpences::loadExpencesFromXMLFile() {
         while ( xml.FindElem("Expence") ) {
             xml.IntoElem();
             xml.FindElem( "ExpenceID" );
-            expence.setUserID(AuxiliaryMethods::convertFromStringToInt(MCD_2PCSZ(xml.GetData())));
-            xml.FindElem( "UserID");
             expence.setExpenceID(AuxiliaryMethods::convertFromStringToInt(MCD_2PCSZ(xml.GetData())));
+            xml.FindElem( "UserID");
+            expence.setUserID(AuxiliaryMethods::convertFromStringToInt(MCD_2PCSZ(xml.GetData())));
             xml.FindElem( "Date"); //changing from string to int without '-'
             strDate = MCD_2PCSZ(xml.GetData());
             expence.setDate(AuxiliaryMethods::convertFromStringToInt(AuxiliaryMethods::disposeOfDashesInDate(strDate)));
@@ -27,7 +27,10 @@ vector <Expence> XMLFileWithExpences::loadExpencesFromXMLFile() {
             xml.OutOfElem();
         }
     }
-    return expences;
+    //temporary solution - loading to vector data from logged in user
+    vector <Expence> expencesFromLoggedInUser;
+    for (int i = 0; i < expences.size(); i++) if (expences[i].getUserId() == ID_LOGGED_IN_USER) expencesFromLoggedInUser.push_back(expences[i]);
+    return expencesFromLoggedInUser;
 }
 
 

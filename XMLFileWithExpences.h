@@ -4,9 +4,10 @@
 #include "XMLTextFile.h"
 #include "Expence.h"
 class XMLFileWithExpences : public XMLTextFile{
+    const int ID_LOGGED_IN_USER;
     int idFromLastExpence;
 public:
-    XMLFileWithExpences(string nameOfFile): XMLTextFile(nameOfFile) {
+    XMLFileWithExpences(string nameOfFile, int idFromLoggedInUser): XMLTextFile(nameOfFile), ID_LOGGED_IN_USER(idFromLoggedInUser) {
         idFromLastExpence = 0;
     };
 
