@@ -21,4 +21,11 @@
 <Item>guitar</Item>
 <Amount>200</Amount>
 </Expence>
+<Expence>
+<ExpenceID>4</ExpenceID>
+<UserID>1</UserID>
+<Date>2020-12-14</Date>
+<Item>skis</Item>
+<Amount>6000</Amount>
+</Expence>
 </Expences>

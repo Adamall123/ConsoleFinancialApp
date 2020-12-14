@@ -8,7 +8,7 @@ void IncomeManager::addIncome() {
     cout << "--------------------------------" << endl;
     string givenDate = giveDateToNewIncome();
 
-    string dateWithoutDashes = dispofeOfDashesInData(givenDate);
+    string dateWithoutDashes = AuxiliaryMethods::disposeOfDashesInDate(givenDate);
 
     int date = AuxiliaryMethods::convertFromStringToInt(dateWithoutDashes);
 
@@ -29,7 +29,7 @@ Income IncomeManager::giveDataForNewIncome(int givenDate){
     income.setItem(AuxiliaryMethods::loadLine());
     cout << "Type amount of income: ";
     cin >> strAmount; //checking if bigger than 0 and making maximum two number after period
-    strAmount = replaceCommasWithDots(strAmount);
+    strAmount = AuxiliaryMethods::replaceCommasWithDots(strAmount);
     income.setAmount(AuxiliaryMethods::convertFromStringToFloat(strAmount));
     return income;
 }
@@ -68,7 +68,7 @@ string IncomeManager::giveDateToNewIncome() {
             system("cls");
             cout << "Give data in a format rrrr-mm-dd" << endl;
             dateInCome = AuxiliaryMethods::loadLine();
-            date = checkCorecctnessOfGivenDate(dateInCome);
+            date = AuxiliaryMethods::checkCorecctnessOfGivenDate(dateInCome);
         } while(date == "");
         return date;
     }

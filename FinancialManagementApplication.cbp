@@ -38,6 +38,8 @@
 		<Unit filename="Costs.h" />
 		<Unit filename="CostsManager.cpp" />
 		<Unit filename="CostsManager.h" />
+		<Unit filename="DisplayCosts.cpp" />
+		<Unit filename="DisplayCosts.h" />
 		<Unit filename="Expence.cpp" />
 		<Unit filename="Expence.h" />
 		<Unit filename="ExpenceManager.cpp" />

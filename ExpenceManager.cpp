@@ -7,7 +7,7 @@ void ExpenceManager::addExpence() {
     cout << "--------------------------------" << endl;
     string givenDate = giveDateToNewExpence();
 
-    string dateWithoutDashes = dispofeOfDashesInData(givenDate);
+    string dateWithoutDashes = AuxiliaryMethods::disposeOfDashesInDate(givenDate);
 
     int date = AuxiliaryMethods::convertFromStringToInt(dateWithoutDashes);
 
@@ -28,7 +28,7 @@ Expence ExpenceManager::giveDataForNewExpence(int givenDate){
     expence.setItem(AuxiliaryMethods::loadLine());
     cout << "Type amount of expence: ";
     cin >> strAmount; //checking if bigger than 0 and making maximum two number after period
-    strAmount = replaceCommasWithDots(strAmount);
+    strAmount = AuxiliaryMethods::replaceCommasWithDots(strAmount);
     expence.setAmount(AuxiliaryMethods::convertFromStringToFloat(strAmount));
     return expence;
 }
@@ -68,7 +68,7 @@ string ExpenceManager::giveDateToNewExpence() {
             system("cls");
             cout << "Give data in a format rrrr-mm-dd" << endl;
             dateInCome = AuxiliaryMethods::loadLine();
-            date = checkCorecctnessOfGivenDate(dateInCome);
+            date = AuxiliaryMethods::checkCorecctnessOfGivenDate(dateInCome);
         } while(date == "");
         return date;
     }

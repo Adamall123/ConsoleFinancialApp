@@ -21,4 +21,11 @@
 <Item>Forgotten Income</Item>
 <Amount>30000.3</Amount>
 </Income>
+<Income>
+<IncomeID>8</IncomeID>
+<UserID>1</UserID>
+<Date>2020-12-14</Date>
+<Item>Torunamnt from Champion World 2020</Item>
+<Amount>5000</Amount>
+</Income>
 </Incomes>

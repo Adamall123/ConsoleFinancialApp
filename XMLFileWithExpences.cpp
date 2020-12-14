@@ -18,7 +18,7 @@ vector <Expence> XMLFileWithExpences::loadExpencesFromXMLFile() {
             expence.setExpenceID(AuxiliaryMethods::convertFromStringToInt(MCD_2PCSZ(xml.GetData())));
             xml.FindElem( "Date"); //changing from string to int without '-'
             strDate = MCD_2PCSZ(xml.GetData());
-            expence.setDate(AuxiliaryMethods::convertFromStringToInt(disposeOfDashesInDate(strDate)));
+            expence.setDate(AuxiliaryMethods::convertFromStringToInt(AuxiliaryMethods::disposeOfDashesInDate(strDate)));
             xml.FindElem( "Item");
             expence.setItem(xml.GetData());
             xml.FindElem( "Amount");
@@ -47,7 +47,7 @@ void XMLFileWithExpences::addExpenceToXMLFile(Expence expence){
     xml.AddElem( "ExpenceID", expence.getExpenceID() );
     xml.AddElem( "UserID",   expence.getUserId() );
     string date = AuxiliaryMethods::convertFromIntToString(expence.getDate());
-    xml.AddElem( "Date", addDashesInDate(date) );
+    xml.AddElem( "Date", AuxiliaryMethods::addDashesInDate(date) );
     xml.AddElem( "Item", expence.getItem() );
     xml.AddElem( "Amount", AuxiliaryMethods::convertFromFloatToString(expence.getAmount()) );
     xml.Save( "expences.xml" );

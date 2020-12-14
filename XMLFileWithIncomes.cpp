@@ -17,7 +17,7 @@ void XMLFileWithIncomes::addIncomeToXMLFile(Income income){
     xml.AddElem( "IncomeID", income.getIncomeID() );
     xml.AddElem( "UserID",   income.getUserId() );
     string date = AuxiliaryMethods::convertFromIntToString(income.getDate());
-    xml.AddElem( "Date", addDashesInDate(date) ); //here it must be changed again with pattern from int to string with '-'
+    xml.AddElem( "Date", AuxiliaryMethods::addDashesInDate(date) ); //here it must be changed again with pattern from int to string with '-'
     xml.AddElem( "Item", income.getItem() );
     xml.AddElem( "Amount", AuxiliaryMethods::convertFromFloatToString(income.getAmount()) );
     xml.Save( "incomes.xml" );
@@ -41,7 +41,7 @@ vector <Income> XMLFileWithIncomes::loadIncomesFromXMLFile() {
             income.setIncomeID(AuxiliaryMethods::convertFromStringToInt(MCD_2PCSZ(xml.GetData())));
             xml.FindElem( "Date"); //changing from string to int without '-'
             strDate = MCD_2PCSZ(xml.GetData());
-            income.setDate(AuxiliaryMethods::convertFromStringToInt(disposeOfDashesInDate(strDate)));
+            income.setDate(AuxiliaryMethods::convertFromStringToInt(AuxiliaryMethods::disposeOfDashesInDate(strDate)));
             xml.FindElem( "Item");
             income.setItem(xml.GetData());
             xml.FindElem( "Amount");

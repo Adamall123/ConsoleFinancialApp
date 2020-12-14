@@ -15,8 +15,7 @@ class XMLTextFile{
 
 public:
     XMLTextFile(string nameOfFile) : NAME_OF_FILE(nameOfFile) {}
-    string disposeOfDashesInDate(string strDate);
-    string addDashesInDate(string date);
+
 };
 
 
