@@ -15,8 +15,9 @@ class DisplayCosts{
     vector <Expence> expencesToDisplayFromCurrentMonth;
     vector <Expence> expencesToDisplayFromLastMonth;
     vector <Expence> expencesToDisplayFromGivenScopeTime;
-    void sortByTimeFromTheOldestTotheNewest(vector <Income> incomes);
-    void sortByTimeFromTheOldestTotheNewest(vector <Expence> expences);
+
+    vector <Income> sortByTimeFromTheOldestTotheNewest(vector <Income> incomes);
+    vector <Expence> sortByTimeFromTheOldestTotheNewest(vector <Expence> expences);
     void displayDataOfIncome(Income income);
     void displayDataOfExpence(Expence expence);
 
@@ -25,6 +26,7 @@ class DisplayCosts{
     void addToListCostsFromTheCurrentMonth();
     void addToListCostsFromTheLastMonth();
     void addToListCostsBetweenTheGivenScopeTime(int date1, int date2);
+
 public:
     DisplayCosts(vector <Income> loadedIncomes, vector <Expence> loadedExpences) : incomes(loadedIncomes), expences(loadedExpences) {};
     void displayBalanceSheetFromTheCurrentMonth();

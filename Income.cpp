@@ -10,3 +10,5 @@ void Income::setIncomeID(int newId){
 int Income::getIncomeID(){
     return incomeId;
 }
+
+

@@ -16,7 +16,7 @@ void Costs::setAmount(float amount){
 int Costs::getUserId(){
     return userID;
 }
-int Costs::getDate(){
+ int Costs::getDate(){
     return date;
 }
 string Costs::getItem(){

@@ -10,6 +10,9 @@ class Income : public Costs{
 public:
     void setIncomeID(int newId);
     int getIncomeID();
+
+    bool operator <(Income const &r) const {return date < r.date;}
+
 };
 
 #endif // INCOME_H

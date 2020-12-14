@@ -23,6 +23,10 @@ class Costs{
     int getDate();
     string getItem();
     float getAmount();
+
+
+
+
 };
 
 #endif // COSTS_H

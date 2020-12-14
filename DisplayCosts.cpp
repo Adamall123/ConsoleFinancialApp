@@ -10,6 +10,7 @@ void DisplayCosts::updateExpences(vector <Expence> newExpences) {
 void DisplayCosts::displayBalanceSheetFromTheCurrentMonth() {
 
     addToListCostsFromTheCurrentMonth();
+    incomesToDisplayFromCurrentMonth = sortByTimeFromTheOldestTotheNewest(incomesToDisplayFromCurrentMonth);
     system("cls");
     if (!incomesToDisplayFromCurrentMonth.empty()) {
         cout << "             >>> Incomes from the current month <<<" << endl;
@@ -21,6 +22,7 @@ void DisplayCosts::displayBalanceSheetFromTheCurrentMonth() {
     } else {
         cout << endl << "There are no incomes here" << endl << endl;
     }
+    expencesToDisplayFromCurrentMonth = sortByTimeFromTheOldestTotheNewest(expencesToDisplayFromCurrentMonth);
     if (!expencesToDisplayFromCurrentMonth.empty()) {
         cout << "             >>> Expences from the current month <<<" << endl;
         cout << "-----------------------------------------------" << endl;
@@ -38,6 +40,7 @@ void DisplayCosts::displayBalanceSheetFromTheCurrentMonth() {
 void DisplayCosts::displayBalanceSheetFromTheLastMonth() {
 
     addToListCostsFromTheLastMonth();
+    incomesToDisplayFromLastMonth = sortByTimeFromTheOldestTotheNewest(incomesToDisplayFromLastMonth);
     system("cls");
     if (!incomesToDisplayFromLastMonth.empty()) {
         cout << "             >>> Incomes from the last month <<<" << endl;
@@ -49,6 +52,7 @@ void DisplayCosts::displayBalanceSheetFromTheLastMonth() {
     } else {
         cout << endl << "There are no incomes here" << endl << endl;
     }
+    expencesToDisplayFromLastMonth = sortByTimeFromTheOldestTotheNewest(expencesToDisplayFromLastMonth);
     if (!expencesToDisplayFromLastMonth.empty()) {
         cout << "             >>> Expences from the last month <<<" << endl;
         cout << "-----------------------------------------------" << endl;
@@ -94,7 +98,7 @@ void DisplayCosts::displayBalanceSheetFromSelectedScopeTime() {
     //check if date from vector include in scope
 
     addToListCostsBetweenTheGivenScopeTime(date1,date2);
-
+    incomesToDisplayFromGivenScopeTime = sortByTimeFromTheOldestTotheNewest(incomesToDisplayFromGivenScopeTime);
       system("cls");
     if (!incomesToDisplayFromGivenScopeTime.empty()) {
         cout << "             >>> Incomes from: " << strDate1 <<  ": " << strDate2 << " <<<"<< endl;
@@ -106,6 +110,7 @@ void DisplayCosts::displayBalanceSheetFromSelectedScopeTime() {
     } else {
         cout << endl << "There are no incomes here" << endl << endl;
     }
+    expencesToDisplayFromGivenScopeTime = sortByTimeFromTheOldestTotheNewest(expencesToDisplayFromGivenScopeTime);
     if (!expencesToDisplayFromGivenScopeTime.empty()) {
         cout << "             >>> Expences from: " << strDate1 <<  ": " << strDate2 << " <<<"<< endl;
         cout << "-----------------------------------------------" << endl;
@@ -120,8 +125,6 @@ void DisplayCosts::displayBalanceSheetFromSelectedScopeTime() {
     system("pause");
 
 }
-
-
 
 void DisplayCosts::displayDataOfExpence(Expence expence) {
     cout << endl << "Item:                 " << expence.getItem() << endl;
@@ -280,3 +283,13 @@ void DisplayCosts::addToListCostsBetweenTheGivenScopeTime(int date1, int date2) 
     }
 }
 
+
+
+vector <Income> DisplayCosts::sortByTimeFromTheOldestTotheNewest(vector <Income> incomes){
+    sort(incomes.begin(), incomes.end());
+   return incomes;
+}
+vector <Expence> DisplayCosts::sortByTimeFromTheOldestTotheNewest(vector <Expence> expences){
+    sort(expences.begin(), expences.end());
+   return expences;
+}

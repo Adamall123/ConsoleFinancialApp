@@ -9,6 +9,8 @@ class Expence : public Costs{
 public:
     void setExpenceID(int newId);
     int getExpenceID();
+
+    bool operator <(Expence const &r) const {return date < r.date;}
 };
 
 #endif // EXPENCE_H
