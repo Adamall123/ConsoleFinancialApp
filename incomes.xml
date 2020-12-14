@@ -3,16 +3,16 @@
 <Income>
 <IncomeID>5</IncomeID>
 <UserID>1</UserID>
-<Date>2020-12-11</Date>
+<Date>2019-12-11</Date>
 <Item>2</Item>
 <Amount>2</Amount>
 </Income>
 <Income>
 <IncomeID>6</IncomeID>
 <UserID>1</UserID>
-<Date>2020-12-11</Date>
-<Item>test23</Item>
-<Amount>399.32</Amount>
+<Date>2020-11-11</Date>
+<Item>Competition in Wisla </Item>
+<Amount>1000</Amount>
 </Income>
 <Income>
 <IncomeID>7</IncomeID>

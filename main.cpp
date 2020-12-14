@@ -42,7 +42,7 @@ int main()
                     personalBudget.displaySheetFromTheCurrentMonth();
                 break;
             case '4':
-               // ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+                    personalBudget.displaySheetFromTheLastMonth();
                 break;
             case '5':
               //  ksiazkaAdresowa.usunAdresata();

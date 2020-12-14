@@ -5,15 +5,25 @@
 #include "Income.h"
 #include "Expence.h"
 #include <cstdlib>
+#include "AuxiliaryMethods.h"
 class DisplayCosts{
     vector <Income> incomes;
     vector <Expence> expences;
-    void sortByTimeFromTheOldestTotheNewest();
+    vector <Income> incomesToDisplayFromCurrentMonth;
+    vector <Income> incomesToDisplayFromLastMonth;
+    vector <Expence> expencesToDisplayFromCurrentMonth;
+    vector <Expence> expencesToDisplayFromLastMonth;
+    void sortByTimeFromTheOldestTotheNewest(vector <Income> incomes);
+    void sortByTimeFromTheOldestTotheNewest(vector <Expence> expences);
     void displayDataOfIncome(Income income);
     void displayDataOfExpence(Expence expence);
+
+    string returnCostsFromTheCurrentMonth(string date);
+    string returnCostsFromLastMonth(string date);// a lot of code is being repeated - think about parametter and ryling on that doing a piecie of code which is different
+    void addToListCostsFromTheCurrentMonth();
+    void addToListCostsFromTheLastMonth();
 public:
     DisplayCosts(vector <Income> loadedIncomes, vector <Expence> loadedExpences) : incomes(loadedIncomes), expences(loadedExpences) {};
-    //in constructor file get vector of incomes and expences
     void displayBalanceSheetFromTheCurrentMonth();
     void displayBalanceSheetFromTheLastMonth();
     void displayBalanceSheetFromSelectedScopeTime();

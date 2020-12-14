@@ -44,6 +44,9 @@ void PersonalBudget::addExpence(){
 void PersonalBudget::displaySheetFromTheCurrentMonth(){
     displayCosts->displayBalanceSheetFromTheCurrentMonth();
 }
+void PersonalBudget::displaySheetFromTheLastMonth(){
+    displayCosts->displayBalanceSheetFromTheLastMonth();
+}
 
 
 char PersonalBudget::selectOptionFromMainMenu() {
