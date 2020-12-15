@@ -5,15 +5,15 @@
 
 using namespace std;
 
-class Costs{
+class Costs {
 
-    protected:
+protected:
     int userID;
     int date;
     string item;
     float amount;
 
-    public:
+public:
     void setUserID(int idFromLoggedInUser);
     void setDate(int date);
     void setItem(string item);

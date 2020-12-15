@@ -1,7 +1,7 @@
 #include "XMLFileWithIncomes.h"
 
-void XMLFileWithIncomes::addIncomeToXMLFile(Income income){
-     CMarkup xml;
+void XMLFileWithIncomes::addIncomeToXMLFile(Income income) {
+    CMarkup xml;
 
 
     bool fileExists = xml.Load("incomes.xml");
@@ -17,7 +17,7 @@ void XMLFileWithIncomes::addIncomeToXMLFile(Income income){
     xml.AddElem( "IncomeID", income.getIncomeID() );
     xml.AddElem( "UserID",   income.getUserId() );
     string date = AuxiliaryMethods::convertFromIntToString(income.getDate());
-    xml.AddElem( "Date", AuxiliaryMethods::addDashesInDate(date) ); //here it must be changed again with pattern from int to string with '-'
+    xml.AddElem( "Date", DateMethods::addDashesInDate(date) ); //here it must be changed again with pattern from int to string with '-'
     xml.AddElem( "Item", income.getItem() );
     xml.AddElem( "Amount", AuxiliaryMethods::convertFromFloatToString(income.getAmount()) );
     xml.Save( "incomes.xml" );
@@ -41,7 +41,7 @@ vector <Income> XMLFileWithIncomes::loadIncomesFromXMLFile() {
             income.setUserID(AuxiliaryMethods::convertFromStringToInt(MCD_2PCSZ(xml.GetData())));
             xml.FindElem( "Date"); //changing from string to int without '-'
             strDate = MCD_2PCSZ(xml.GetData());
-            income.setDate(AuxiliaryMethods::convertFromStringToInt(AuxiliaryMethods::disposeOfDashesInDate(strDate)));
+            income.setDate(AuxiliaryMethods::convertFromStringToInt(DateMethods::disposeOfDashesInDate(strDate)));
             xml.FindElem( "Item");
             income.setItem(xml.GetData());
             xml.FindElem( "Amount");
@@ -52,16 +52,18 @@ vector <Income> XMLFileWithIncomes::loadIncomesFromXMLFile() {
     }
     //temporary solution - loading to vector data from logged in user
     vector <Income> incomesFromLoggedInUser;
-    for (int i = 0; i < incomes.size(); i++)    if (incomes[i].getUserId() == ID_LOGGED_IN_USER) incomesFromLoggedInUser.push_back(incomes[i]);
+    for (int i = 0; i < incomes.size(); i++)
+        if (incomes[i].getUserId() == ID_LOGGED_IN_USER)
+            incomesFromLoggedInUser.push_back(incomes[i]);
     return incomesFromLoggedInUser;
 }
 
-int XMLFileWithIncomes::returnLastIncomeId(){
+int XMLFileWithIncomes::returnLastIncomeId() {
     Income income;
     CMarkup xml;
     bool fileExists = xml.Load("incomes.xml");
-    if(fileExists){
-         xml.ResetPos(); // top of document
+    if(fileExists) {
+        xml.ResetPos(); // top of document
         xml.FindElem(); // incomes element is root
         xml.IntoElem(); // inside incomes
         while ( xml.FindElem("Income") ) {
@@ -70,7 +72,7 @@ int XMLFileWithIncomes::returnLastIncomeId(){
             idFromLastIncome = AuxiliaryMethods::convertFromStringToInt(MCD_2PCSZ(xml.GetData())); //after a while, when on last element than assign
             xml.OutOfElem();
         }
-    return idFromLastIncome;
-    }
-    else return 0;
+        return idFromLastIncome;
+    } else
+        return 0;
 }

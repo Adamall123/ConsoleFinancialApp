@@ -4,7 +4,7 @@
 #include "XMLTextFile.h"
 #include "Income.h"
 
-class XMLFileWithIncomes : public XMLTextFile{
+class XMLFileWithIncomes : public XMLTextFile {
     const int ID_LOGGED_IN_USER;
     int idFromLastIncome;
 public:

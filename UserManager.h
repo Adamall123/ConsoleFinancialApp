@@ -8,7 +8,7 @@
 #include "AuxiliaryMethods.h"
 #include "XMLFileWithUsers.h"
 
-class UserManager{
+class UserManager {
 
     int idLoggedInUser;
     vector <User> users;
@@ -18,9 +18,9 @@ class UserManager{
     //update those methods on UML
     int getIdFromNewUser();
 public:
-   UserManager(string nameOfFileWithUsers) : xmlFileWithUsers(nameOfFileWithUsers){
-    idLoggedInUser = 0;
-    users = xmlFileWithUsers.loadUsersFromXMLFile();
+    UserManager(string nameOfFileWithUsers) : xmlFileWithUsers(nameOfFileWithUsers) {
+        idLoggedInUser = 0;
+        users = xmlFileWithUsers.loadUsersFromXMLFile();
     } ;
     void registerUser();
     int login();

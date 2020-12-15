@@ -5,9 +5,9 @@
 #include "User.h"
 
 
-class XMLFileWithUsers : public XMLTextFile{
+class XMLFileWithUsers : public XMLTextFile {
 
-    public:
+public:
     //XMLFileWithUsers();
     XMLFileWithUsers(string nameOfFile): XMLTextFile(nameOfFile) {};
     void addUserToXMLFile(User user);

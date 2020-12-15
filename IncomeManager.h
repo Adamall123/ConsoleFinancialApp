@@ -6,7 +6,7 @@
 #include <cstdlib>
 #include <string.h>
 
-class IncomeManager : private CostsManager{
+class IncomeManager : private CostsManager {
 
     vector <Income> incomes;
     XMLFileWithIncomes xmlFileWithIncomes;
@@ -15,7 +15,7 @@ class IncomeManager : private CostsManager{
     Income giveDataForNewIncome(int givenDate);
 
 public:
-    IncomeManager(string nameOfFile, int iDFromLoggedInUser) : xmlFileWithIncomes(nameOfFile, iDFromLoggedInUser), CostsManager(iDFromLoggedInUser){
+    IncomeManager(string nameOfFile, int iDFromLoggedInUser) : xmlFileWithIncomes(nameOfFile, iDFromLoggedInUser), CostsManager(iDFromLoggedInUser) {
         incomes = xmlFileWithIncomes.loadIncomesFromXMLFile();
     };
     void addIncome();

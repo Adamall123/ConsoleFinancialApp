@@ -6,6 +6,7 @@
 #include "Expence.h"
 #include <cstdlib>
 #include "AuxiliaryMethods.h"
+#include "DateMethods.h"
 class DisplayCosts{
     vector <Income> incomes;
     vector <Expence> expences;

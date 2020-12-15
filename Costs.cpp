@@ -1,27 +1,27 @@
 #include "Costs.h"
 
-void Costs::setUserID(int idFromLoggedInUser){
+void Costs::setUserID(int idFromLoggedInUser) {
     userID = idFromLoggedInUser;
 }
-void Costs::setDate(int date){
+void Costs::setDate(int date) {
     this->date = date;
 }
-void Costs::setItem(string item){
+void Costs::setItem(string item) {
     this->item = item;
 }
-void Costs::setAmount(float amount){
+void Costs::setAmount(float amount) {
     this->amount = amount;
 }
 
-int Costs::getUserId(){
+int Costs::getUserId() {
     return userID;
 }
- int Costs::getDate(){
+int Costs::getDate() {
     return date;
 }
-string Costs::getItem(){
+string Costs::getItem() {
     return item;
 }
-float Costs::getAmount(){
+float Costs::getAmount() {
     return amount;
 }

@@ -55,20 +55,20 @@ vector <User> XMLFileWithUsers::loadUsersFromXMLFile() {
 void XMLFileWithUsers::addAllUsersToXMLFile(vector <User> &users) {
     CMarkup xml;
     //bool fileExists = xml.Load("users.xml");
-        xml.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
-        xml.AddElem( "Users");
+    xml.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
+    xml.AddElem( "Users");
+    xml.IntoElem();
+    for (int i = 0; i < users.size(); i++) {
+        xml.AddElem("User");
         xml.IntoElem();
-        for (int i = 0; i < users.size(); i++) {
-            xml.AddElem("User");
-            xml.IntoElem();
-            xml.AddElem( "UserID",  users[i].getID() );
-            xml.AddElem( "Name", users[i].getName() );
-            xml.AddElem( "Surname", users[i].getSurname() );
-            xml.AddElem( "Login", users[i].getLogin() );
-            xml.AddElem( "Password", users[i].getPassword() );
-            xml.OutOfElem();
-        }
-        xml.Save( "users.xml" );
+        xml.AddElem( "UserID",  users[i].getID() );
+        xml.AddElem( "Name", users[i].getName() );
+        xml.AddElem( "Surname", users[i].getSurname() );
+        xml.AddElem( "Login", users[i].getLogin() );
+        xml.AddElem( "Password", users[i].getPassword() );
+        xml.OutOfElem();
+    }
+    xml.Save( "users.xml" );
     //else cout << "The file could not be opened" << endl; // pobierzNazwePliku()
 
 }

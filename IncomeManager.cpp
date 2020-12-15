@@ -8,7 +8,7 @@ void IncomeManager::addIncome() {
     cout << "--------------------------------" << endl;
     string givenDate = giveDateToNewIncome();
 
-    string dateWithoutDashes = AuxiliaryMethods::disposeOfDashesInDate(givenDate);
+    string dateWithoutDashes = DateMethods::disposeOfDashesInDate(givenDate);
 
     int date = AuxiliaryMethods::convertFromStringToInt(dateWithoutDashes);
 
@@ -19,7 +19,7 @@ void IncomeManager::addIncome() {
 
 }
 
-Income IncomeManager::giveDataForNewIncome(int givenDate){
+Income IncomeManager::giveDataForNewIncome(int givenDate) {
     string strAmount;
     Income income;
     income.setIncomeID(xmlFileWithIncomes.returnLastIncomeId() + 1); //getting last id from xmfileIncomes.returnLastIncomeId() + 1;
@@ -56,10 +56,11 @@ string IncomeManager::giveDateToNewIncome() {
     cout << "Select Option" << endl;
     cout << "1. Adding Income with present date: "<< currentTime << endl;
     cout <<"2. Give date from income " << endl;
-    do{
-         choice = AuxiliaryMethods::loadSign();
-         if (choice == '2') presentDay = false;
-    }while(choice != '1' && choice != '2' );
+    do {
+        choice = AuxiliaryMethods::loadSign();
+        if (choice == '2')
+            presentDay = false;
+    } while(choice != '1' && choice != '2' );
 
     if(!presentDay) {
         string dateInCome = "";
@@ -68,13 +69,13 @@ string IncomeManager::giveDateToNewIncome() {
             system("cls");
             cout << "Give data in a format rrrr-mm-dd" << endl;
             dateInCome = AuxiliaryMethods::loadLine();
-            date = AuxiliaryMethods::checkCorecctnessOfGivenDate(dateInCome);
+            date = DateMethods::checkCorecctnessOfGivenDate(dateInCome);
         } while(date == "");
         return date;
     }
     return currentTime;
 }
 
-vector <Income> IncomeManager::getIncomes(){
+vector <Income> IncomeManager::getIncomes() {
     return incomes;
 }

@@ -1,30 +1,26 @@
 #include "PersonalBudget.h"
 
 
-void PersonalBudget::registerUser(){
+void PersonalBudget::registerUser() {
     userManager.registerUser();
 }
 
-void PersonalBudget::login(){
+void PersonalBudget::login() {
     userManager.login();
-     if(userManager.isUserLoggedIn()){
+    if(userManager.isUserLoggedIn()) {
         //costsManager = new CostsManager(NAME_OF_FILE_WITH_INCOMES, userManager.downloadLoggedInUsersID());
         incomeManager = new IncomeManager(NAME_OF_FILE_WITH_INCOMES, userManager.downloadLoggedInUsersID());
         expenceManager = new ExpenceManager(NAME_OF_FILE_WITH_EXPENCES, userManager.downloadLoggedInUsersID());
         displayCosts = new DisplayCosts(incomeManager->getIncomes(), expenceManager->getExpences());
-     }
+    }
 }
-bool PersonalBudget::isUserLoggedIn(){
-    if (userManager.isUserLoggedIn())
-        return 1;
-    else
-        return 0;
+bool PersonalBudget::isUserLoggedIn() {
+    return userManager.isUserLoggedIn();
 }
 
 void PersonalBudget::logout() {
     userManager.logout();
-    //delete adresatMenedzer;
-   // adresatMenedzer = NULL;
+    //delete expences,incomes and set null;
 }
 
 void PersonalBudget::changeOfPasswordForLoggedInUser() {
@@ -32,22 +28,22 @@ void PersonalBudget::changeOfPasswordForLoggedInUser() {
 }
 
 ////////////////////////////////// ad income ///////////////////////////////////////////////////
-void PersonalBudget::addIncome(){
+void PersonalBudget::addIncome() {
     incomeManager->addIncome();
     displayCosts->updateIncomes(incomeManager->getIncomes());
 }
 ////////////////////////////////// ad expence //////////////////////////////////////////////////
-void PersonalBudget::addExpence(){
+void PersonalBudget::addExpence() {
     expenceManager->addExpence();
     displayCosts->updateExpences(expenceManager->getExpences());
 }
-void PersonalBudget::displaySheetFromTheCurrentMonth(){
+void PersonalBudget::displaySheetFromTheCurrentMonth() {
     displayCosts->displayBalanceSheetFromTheCurrentMonth();
 }
-void PersonalBudget::displaySheetFromTheLastMonth(){
+void PersonalBudget::displaySheetFromTheLastMonth() {
     displayCosts->displayBalanceSheetFromTheLastMonth();
 }
-void PersonalBudget::displaySheetFromSelectedScopeTime(){
+void PersonalBudget::displaySheetFromSelectedScopeTime() {
     displayCosts->displayBalanceSheetFromSelectedScopeTime();
 }
 

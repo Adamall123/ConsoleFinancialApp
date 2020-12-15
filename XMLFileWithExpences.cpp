@@ -18,7 +18,7 @@ vector <Expence> XMLFileWithExpences::loadExpencesFromXMLFile() {
             expence.setUserID(AuxiliaryMethods::convertFromStringToInt(MCD_2PCSZ(xml.GetData())));
             xml.FindElem( "Date"); //changing from string to int without '-'
             strDate = MCD_2PCSZ(xml.GetData());
-            expence.setDate(AuxiliaryMethods::convertFromStringToInt(AuxiliaryMethods::disposeOfDashesInDate(strDate)));
+            expence.setDate(AuxiliaryMethods::convertFromStringToInt(DateMethods::disposeOfDashesInDate(strDate)));
             xml.FindElem( "Item");
             expence.setItem(xml.GetData());
             xml.FindElem( "Amount");
@@ -29,13 +29,15 @@ vector <Expence> XMLFileWithExpences::loadExpencesFromXMLFile() {
     }
     //temporary solution - loading to vector data from logged in user
     vector <Expence> expencesFromLoggedInUser;
-    for (int i = 0; i < expences.size(); i++) if (expences[i].getUserId() == ID_LOGGED_IN_USER) expencesFromLoggedInUser.push_back(expences[i]);
+    for (int i = 0; i < expences.size(); i++)
+        if (expences[i].getUserId() == ID_LOGGED_IN_USER)
+            expencesFromLoggedInUser.push_back(expences[i]);
     return expencesFromLoggedInUser;
 }
 
 
-void XMLFileWithExpences::addExpenceToXMLFile(Expence expence){
-     CMarkup xml;
+void XMLFileWithExpences::addExpenceToXMLFile(Expence expence) {
+    CMarkup xml;
 
     bool fileExists = xml.Load("expences.xml");
 
@@ -50,18 +52,18 @@ void XMLFileWithExpences::addExpenceToXMLFile(Expence expence){
     xml.AddElem( "ExpenceID", expence.getExpenceID() );
     xml.AddElem( "UserID",   expence.getUserId() );
     string date = AuxiliaryMethods::convertFromIntToString(expence.getDate());
-    xml.AddElem( "Date", AuxiliaryMethods::addDashesInDate(date) );
+    xml.AddElem( "Date", DateMethods::addDashesInDate(date) );
     xml.AddElem( "Item", expence.getItem() );
     xml.AddElem( "Amount", AuxiliaryMethods::convertFromFloatToString(expence.getAmount()) );
     xml.Save( "expences.xml" );
 }
 
-int XMLFileWithExpences::returnLastExpenceId(){
+int XMLFileWithExpences::returnLastExpenceId() {
     Expence expence;
     CMarkup xml;
     bool fileExists = xml.Load("expences.xml");
-    if(fileExists){
-         xml.ResetPos(); // top of document
+    if(fileExists) {
+        xml.ResetPos(); // top of document
         xml.FindElem(); // incomes element is root
         xml.IntoElem(); // inside incomes
         while ( xml.FindElem("Expence") ) {
@@ -70,7 +72,7 @@ int XMLFileWithExpences::returnLastExpenceId(){
             idFromLastExpence = AuxiliaryMethods::convertFromStringToInt(MCD_2PCSZ(xml.GetData())); //after a while, when on last element than assign
             xml.OutOfElem();
         }
-    return idFromLastExpence;
-    }
-    else return 0;
+        return idFromLastExpence;
+    } else
+        return 0;
 }

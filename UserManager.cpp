@@ -1,10 +1,9 @@
 #include "UserManager.h"
 
 
-void UserManager::registerUser(){
+void UserManager::registerUser() {
     cout <<"register user" << endl;
     User user = giveDataForNewUser();
-
     users.push_back(user);
     xmlFileWithUsers.addUserToXMLFile(user);
     cout << endl << "The account has been made succesfully!" << endl << endl;
@@ -15,12 +14,9 @@ void UserManager::registerUser(){
 int UserManager::login() {
     User user;
     string login = "", password = "";
-
     cout  << "Give login: ";
     cin >> login;
-
     vector <User>::iterator itr = users.begin();
-
     while (itr != users.end()) {
         if (itr -> getLogin() == login) {
             cout << "Give password: ";
@@ -47,7 +43,6 @@ int UserManager::login() {
 void UserManager::logout() {
     idLoggedInUser = 0;
 }
-
 ////////////////////////////////////////////////////////////////////////Changing password of user ////////////////////////////////////////////////////////////////////////
 void UserManager::changeOfPasswordForLoggedInUser() {
     string newPassword = "";
@@ -64,21 +59,16 @@ void UserManager::changeOfPasswordForLoggedInUser() {
     xmlFileWithUsers.addAllUsersToXMLFile(users);
 }
 
-
 bool UserManager::isUserLoggedIn() {
-    if (idLoggedInUser > 0)
-        return 1;
-    else
-        return 0;
+    return (idLoggedInUser > 0) ? 1 : 0;
 }
 
-void UserManager::displayAllUsers(){
-    for (int i = 0; i < users.size(); i++){
+void UserManager::displayAllUsers() {
+    for (int i = 0; i < users.size(); i++) {
         cout << users[i].getID() << " .";
         cout << users[i].getName() << endl;
     }
 }
-
 
 User UserManager::giveDataForNewUser() {
     User user;
@@ -96,19 +86,15 @@ User UserManager::giveDataForNewUser() {
     user.setPassword(AuxiliaryMethods::loadLine()) ;
     return user;
 }
-int UserManager::downloadLoggedInUsersID(){
+int UserManager::downloadLoggedInUsersID() {
     return idLoggedInUser;
 }
 
 int UserManager::getIdFromNewUser() {
-    if (users.empty() == true)
-        return 1;
-    else
-        return users.back().getID() + 1;
+    return (users.empty()) ? 1 : users.back().getID() + 1;
 }
 
 bool UserManager::doesLoginExist(string login) {
-
     for (int i = 0; i < users.size(); i++) {
         if (users[i].getLogin() == login) {
             cout  << "There is a user with this login name." << endl;
@@ -116,18 +102,4 @@ bool UserManager::doesLoginExist(string login) {
         }
     }
     return false;
-    /*
-    vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
-    while (itr != uzytkownicy.end())
-    {
-        if (itr -> pobierzLogin() == login)
-        {
-            cout << endl << "Istnieje uzytkownik o takim loginie." << endl;
-            return true;
-        }
-        else
-            itr++;
-    }
-    return false;
-    */
 }

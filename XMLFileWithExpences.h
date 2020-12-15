@@ -3,7 +3,7 @@
 
 #include "XMLTextFile.h"
 #include "Expence.h"
-class XMLFileWithExpences : public XMLTextFile{
+class XMLFileWithExpences : public XMLTextFile {
     const int ID_LOGGED_IN_USER;
     int idFromLastExpence;
 public:

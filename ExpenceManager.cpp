@@ -7,7 +7,7 @@ void ExpenceManager::addExpence() {
     cout << "--------------------------------" << endl;
     string givenDate = giveDateToNewExpence();
 
-    string dateWithoutDashes = AuxiliaryMethods::disposeOfDashesInDate(givenDate);
+    string dateWithoutDashes = DateMethods::disposeOfDashesInDate(givenDate);
 
     int date = AuxiliaryMethods::convertFromStringToInt(dateWithoutDashes);
 
@@ -18,7 +18,7 @@ void ExpenceManager::addExpence() {
 
 }
 
-Expence ExpenceManager::giveDataForNewExpence(int givenDate){
+Expence ExpenceManager::giveDataForNewExpence(int givenDate) {
     string strAmount;
     Expence expence;
     expence.setExpenceID(xmlFileWithExpences.returnLastExpenceId() + 1);
@@ -56,10 +56,11 @@ string ExpenceManager::giveDateToNewExpence() {
     cout << "Select Option" << endl;
     cout << "1. Adding Income with present date: "<< currentTime << endl;
     cout <<"2. Give date from income " << endl;
-    do{
-         choice = AuxiliaryMethods::loadSign();
-         if (choice == '2') presentDay = false;
-    }while(choice != '1' && choice != '2' );
+    do {
+        choice = AuxiliaryMethods::loadSign();
+        if (choice == '2')
+            presentDay = false;
+    } while(choice != '1' && choice != '2' );
 
     if(!presentDay) {
         string dateInCome = "";
@@ -68,13 +69,13 @@ string ExpenceManager::giveDateToNewExpence() {
             system("cls");
             cout << "Give data in a format rrrr-mm-dd" << endl;
             dateInCome = AuxiliaryMethods::loadLine();
-            date = AuxiliaryMethods::checkCorecctnessOfGivenDate(dateInCome);
+            date = DateMethods::checkCorecctnessOfGivenDate(dateInCome);
         } while(date == "");
         return date;
     }
     return currentTime;
 }
 
-vector <Expence> ExpenceManager::getExpences(){
+vector <Expence> ExpenceManager::getExpences() {
     return expences;
 }

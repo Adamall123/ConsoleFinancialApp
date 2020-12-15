@@ -2,13 +2,10 @@
 #include "PersonalBudget.h"
 using namespace std;
 
-int main()
-{
+int main() {
     cout << "Personal Budget - start!" << endl;
     PersonalBudget personalBudget("users.xml", "incomes.xml","expences.xml");
-
     char choice;
-
     while (true) {
         if (!personalBudget.isUserLoggedIn()) {
             choice = personalBudget.selectOptionFromMainMenu();
@@ -30,22 +27,21 @@ int main()
             }
         } else {
             choice = personalBudget.selectOptionFromUserMenu();
-
             switch (choice) {
             case '1':
-                    personalBudget.addIncome();
+                personalBudget.addIncome();
                 break;
             case '2':
-                    personalBudget.addExpence();
+                personalBudget.addExpence();
                 break;
             case '3':
-                    personalBudget.displaySheetFromTheCurrentMonth();
+                personalBudget.displaySheetFromTheCurrentMonth();
                 break;
             case '4':
-                    personalBudget.displaySheetFromTheLastMonth();
+                personalBudget.displaySheetFromTheLastMonth();
                 break;
             case '5':
-                    personalBudget.displaySheetFromSelectedScopeTime();
+                personalBudget.displaySheetFromSelectedScopeTime();
                 break;
             case '6':
                 personalBudget.changeOfPasswordForLoggedInUser();
@@ -56,8 +52,5 @@ int main()
             }
         }
     }
-
-
-
     return 0;
 }

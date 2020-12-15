@@ -8,10 +8,10 @@
 #include "XMLFileWithIncomes.h"
 #include "XMLFileWithExpences.h"
 #include "AuxiliaryMethods.h"
-
+#include "DateMethods.h"
 using namespace std;
 
-class CostsManager{
+class CostsManager {
 
 
 protected:

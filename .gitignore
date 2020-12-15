@@ -2,4 +2,3 @@ bin/
 obj/
 FinancialManagementApplication.*
 !.gitignore
-!FinancialManagementApplication.cbp
