@@ -8,7 +8,8 @@ void DisplayCosts::updateExpences(vector <Expence> newExpences) {
 }
 
 void DisplayCosts::displayBalanceSheetFromTheCurrentMonth() {
-
+    incomesToDisplayFromCurrentMonth.clear();
+    expencesToDisplayFromCurrentMonth.clear();
     addToListCostsFromTheCurrentMonth();
     incomesToDisplayFromCurrentMonth = sortByTimeFromTheOldestTotheNewest(incomesToDisplayFromCurrentMonth);
     system("cls");
@@ -38,7 +39,8 @@ void DisplayCosts::displayBalanceSheetFromTheCurrentMonth() {
 }
 
 void DisplayCosts::displayBalanceSheetFromTheLastMonth() {
-
+    incomesToDisplayFromLastMonth.clear();
+    expencesToDisplayFromLastMonth.clear();
     addToListCostsFromTheLastMonth();
     incomesToDisplayFromLastMonth = sortByTimeFromTheOldestTotheNewest(incomesToDisplayFromLastMonth);
     system("cls");
@@ -96,7 +98,8 @@ void DisplayCosts::displayBalanceSheetFromSelectedScopeTime() {
         }while(AuxiliaryMethods::checkCorecctnessOfGivenDate(strDate2) == "" || correctnessOfGivenTwoDates == false);
 
     //check if date from vector include in scope
-
+    incomesToDisplayFromGivenScopeTime.clear();
+    expencesToDisplayFromGivenScopeTime.clear();
     addToListCostsBetweenTheGivenScopeTime(date1,date2);
     incomesToDisplayFromGivenScopeTime = sortByTimeFromTheOldestTotheNewest(incomesToDisplayFromGivenScopeTime);
       system("cls");
