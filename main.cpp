@@ -22,7 +22,7 @@ int main() {
                 break;
             default:
                 cout << endl << "No option in this menu." << endl << endl;
-                system("pause");
+                cin.get();
                 break;
             }
         } else {

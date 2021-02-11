@@ -12,7 +12,7 @@ class User {
     string login;
     string password;
 public:
-    Uzytkownik();
+    // Uzytkownik();
     void setID(int noweID );
     void setName(string name );
     void setSurname(string surname );
