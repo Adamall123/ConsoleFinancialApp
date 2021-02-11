@@ -26,7 +26,7 @@ string DateMethods::checkCorecctnessOfGivenDate(string dateIncome) {
     for(int i = 0; i <dateIncome.size(); i++) {
         if (i == 4 && dateIncome[4] != '-' || i == 7 && dateIncome[7] != '-' || dateIncome.size() < 10) {
             cout << "Given a wrong format of date" << endl;
-            system("pause");
+            cin.get();
             return "";
         }
         if (i < 4) {
@@ -36,7 +36,7 @@ string DateMethods::checkCorecctnessOfGivenDate(string dateIncome) {
                 int currentYear = now->tm_year + 1900;
                 if(year < 2000 || year > currentYear) {
                     cout << "Given a wrong year" << endl;
-                    system("pause");
+                    cin.get();
                     return "";
                 }
             }
@@ -46,7 +46,7 @@ string DateMethods::checkCorecctnessOfGivenDate(string dateIncome) {
                 month = AuxiliaryMethods::convertFromStringToInt(strMonth);
                 if (month < 1 || month > 12) {
                     cout << "Given a wrong month" << endl;
-                    system("pause");
+                    cin.get();
                     return "";
                 }
             }
@@ -57,7 +57,7 @@ string DateMethods::checkCorecctnessOfGivenDate(string dateIncome) {
                 int amountDaysOfSelectedMonth = getNumberOfDaysOfSelectedMonth(month, year);
                 if (day < 1 || day > amountDaysOfSelectedMonth) {
                     cout << "Given a wrong day" << endl;
-                    system("pause");
+                    cin.get();
                     return "";
                 } else
                     return strYear + '-' + strMonth + '-' + strDay;

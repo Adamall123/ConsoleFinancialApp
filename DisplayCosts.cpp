@@ -34,7 +34,7 @@ void DisplayCosts::displayBalanceSheetFromTheCurrentMonth() {
         cout << endl << "There are no expences here" << endl << endl;
     }
 
-    system("pause");
+    cin.get();
 }
 void DisplayCosts::displayBalanceSheetFromTheLastMonth() {
     incomesToDisplayFromLastMonth.clear();
@@ -64,7 +64,7 @@ void DisplayCosts::displayBalanceSheetFromTheLastMonth() {
         cout << endl << "There are no expences here" << endl << endl;
     }
 
-    system("pause");
+    cin.get();
 }
 void DisplayCosts::displayBalanceSheetFromSelectedScopeTime() {
     string strDate1 ="", strDate2="";
@@ -89,7 +89,7 @@ void DisplayCosts::displayBalanceSheetFromSelectedScopeTime() {
             correctnessOfGivenTwoDates = true;
         else {
             cout << "Date 2 must be older or the same as the date 1" << endl;
-            system("pause");
+            cin.get();
         }
     } while(DateMethods::checkCorecctnessOfGivenDate(strDate2) == "" || correctnessOfGivenTwoDates == false);
     incomesToDisplayFromGivenScopeTime.clear();
@@ -119,7 +119,7 @@ void DisplayCosts::displayBalanceSheetFromSelectedScopeTime() {
         cout << endl << "There are no expences here" << endl << endl;
     }
 
-    system("pause");
+    cin.get();
 
 }
 void DisplayCosts::displayDataOfExpence(Expence expence) {

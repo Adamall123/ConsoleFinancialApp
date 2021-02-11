@@ -7,7 +7,7 @@ void UserManager::registerUser() {
     users.push_back(user);
     xmlFileWithUsers.addUserToXMLFile(user);
     cout << endl << "The account has been made succesfully!" << endl << endl;
-    system("pause");
+    cin.get();
 }
 
 ////////////////////////////////////////////////////////////////////////Logging in User ////////////////////////////////////////////////////////////////////////
@@ -24,7 +24,7 @@ int UserManager::login() {
                 cin >> password;
                 if(itr -> getPassword() == password) {
                     cout << endl << "You have logged in" << endl << endl;
-                    system("Pause");
+                    cin.get();
                     idLoggedInUser = itr -> getID();
                     return idLoggedInUser;
                 }
@@ -33,7 +33,7 @@ int UserManager::login() {
                     cout << "Give password(given wrong password): ";
             }
             cout << "Prove 3 times wrong password" << endl;
-            system("Pause");
+            cin.get();
             return 0;
         }
         itr++;
@@ -53,7 +53,7 @@ void UserManager::changeOfPasswordForLoggedInUser() {
         if (users[i].getID() == idLoggedInUser) {
             users[i].setPassword(newPassword);
             cout << "Password has been changed." << endl << endl;
-            system("pause");
+            cin.get();
         }
     }
     xmlFileWithUsers.addAllUsersToXMLFile(users);
